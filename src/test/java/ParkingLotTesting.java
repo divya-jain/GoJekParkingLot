@@ -71,4 +71,10 @@ public class ParkingLotTesting {
         ParkingLot parkingLot = new ParkingLot(1);
         assertEquals("Sorry,this slot doesn't exist",parkingLot.leave(2));
     }
+
+    @Test
+    public void testStatus(){
+        ParkingLot parkingLot = new ParkingLot(1);
+        parkingLot.status();
+    }
 }

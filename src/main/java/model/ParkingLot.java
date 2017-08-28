@@ -57,4 +57,13 @@ public class ParkingLot {
             return "Slot Number "+position+" is now free";
         }
     }
+
+    public void status() {
+        System.out.println("Slot No. "+ "\t" + "Registration No. "+ "\t"+ "Color");
+        for(int i=1;i<=this.parkinglotmapping.size();i++){
+            if(this.parkinglotmapping.get(i)!=null) {
+                System.out.println(i + "\t" + this.parkinglotmapping.get(i).getRegistratonNo() + "\t" + this.parkinglotmapping.get(i).getcolor());
+            }
+        }
+    }
 }
