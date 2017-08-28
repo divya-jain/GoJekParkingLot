@@ -24,7 +24,7 @@ public class ParkingLot {
         int emptySlot=getFreeSlot();
 
         if(emptySlot==0)
-            return "Sorry, Parking Lot is fulll";
+            return "Sorry, Parking Lot is full";
         else{
             parkinglotmapping.put(emptySlot,car);
             return "Car parked to slot number: "+emptySlot;
