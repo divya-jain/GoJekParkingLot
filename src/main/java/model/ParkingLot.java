@@ -48,4 +48,13 @@ public class ParkingLot {
         }
         return count;
     }
+
+    public String leave(int position) {
+        if(position>this.parkinglotmapping.size()|| position<1)
+            return "Sorry,this slot doesn't exist";
+        else{
+            this.parkinglotmapping.put(position,null);
+            return "Slot Number "+position+" is now free";
+        }
+    }
 }

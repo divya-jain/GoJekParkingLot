@@ -64,6 +64,11 @@ public class ParkingLotTesting {
         Car car2 = new Car("RJ-02-CB-5245","White");
         parkingLot.park(car2);
         assertEquals("Slot Number 2 is now free",parkingLot.leave(2));
+    }
 
+    @Test
+    public void testLeaveNonExistingSlot(){
+        ParkingLot parkingLot = new ParkingLot(1);
+        assertEquals("Sorry,this slot doesn't exist",parkingLot.leave(2));
     }
 }
