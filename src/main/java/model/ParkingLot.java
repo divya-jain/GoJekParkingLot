@@ -33,7 +33,7 @@ public class ParkingLot {
     }
 
     public int getFreeSlot() {
-        for(int i=1;i<this.parkinglotmapping.size();i++){
+        for(int i=1;i<=this.parkinglotmapping.size();i++){
             if(parkinglotmapping.get(i)==null)
                 return i;
         }
@@ -65,5 +65,15 @@ public class ParkingLot {
                 System.out.println(i + "\t" + this.parkinglotmapping.get(i).getRegistratonNo() + "\t" + this.parkinglotmapping.get(i).getcolor());
             }
         }
+    }
+
+    public String getRegistrationNoByColor(String color) {
+        String regNo="";
+        for(int i=1;i<=this.parkinglotmapping.size();i++){
+            if(this.parkinglotmapping.get(i)!=null && this.parkinglotmapping.get(i).getcolor().equalsIgnoreCase(color)){
+                regNo +=this.parkinglotmapping.get(i).getRegistratonNo() + ", ";
+            }
+        }
+        return regNo.substring(0, regNo.length() - 2);
     }
 }

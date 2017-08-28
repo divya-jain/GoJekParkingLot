@@ -77,4 +77,18 @@ public class ParkingLotTesting {
         ParkingLot parkingLot = new ParkingLot(1);
         parkingLot.status();
     }
+
+    @Test
+    public void testgetRegistrationNoByColor(){
+        ParkingLot parkingLot = new ParkingLot(4);
+        Car car1 = new Car("RJ-02-CB-5244","Pink");
+        parkingLot.park(car1);
+        Car car2 = new Car("RJ-02-CB-5245","White");
+        parkingLot.park(car2);
+        Car car3 = new Car("RJ-02-CB-5246","Pink");
+        parkingLot.park(car3);
+        Car car4 = new Car("RJ-02-CB-5247","White");
+        parkingLot.park(car4);
+        assertEquals("RJ-02-CB-5245, RJ-02-CB-5247",parkingLot.getRegistrationNoByColor("White"));
+    }
 }
