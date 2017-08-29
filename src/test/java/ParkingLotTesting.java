@@ -72,6 +72,6 @@ public class ParkingLotTesting {
 
     @Test
     public void testSlotByCarColor(){
-        assertEquals("RJ-02-CB-5244, RJ-02-CB-5246",parkinglot.getSlotsByCarColor("Pink"));
+        assertEquals("1 ,3",parkinglot.getSlotsByCarColor("Pink"));
     }
 }

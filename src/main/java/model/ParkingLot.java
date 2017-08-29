@@ -76,4 +76,13 @@ public class ParkingLot {
         }
         return regNo.substring(0, regNo.length() - 2);
     }
+
+    public String getSlotsByCarColor(String color) {
+        String slots="";
+        for(int i=1;i<=this.parkinglotmapping.size();i++){
+            if(this.parkinglotmapping.get(i)!=null && this.parkinglotmapping.get(i).getcolor().equalsIgnoreCase(color))
+                slots+=i+ " ,";
+        }
+        return slots.substring(0,slots.length()-2);
+    }
 }
