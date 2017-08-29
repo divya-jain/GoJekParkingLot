@@ -3,6 +3,9 @@ import model.Car;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.security.PublicKey;
+
 import static org.junit.Assert.*;
 
 
@@ -73,5 +76,10 @@ public class ParkingLotTesting {
     @Test
     public void testSlotByCarColor(){
         assertEquals("1 ,3",parkinglot.getSlotsByCarColor("Pink"));
+    }
+
+    @Test
+    public void getSlotsByCarRegistrationNo(){
+        assertEquals("3",parkinglot.getSlotsByCarRegistrationNo("RJ-02-CB-5246"));
     }
 }
