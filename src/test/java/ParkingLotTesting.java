@@ -82,4 +82,9 @@ public class ParkingLotTesting {
     public void getSlotsByCarRegistrationNo(){
         assertEquals("3",parkinglot.getSlotsByCarRegistrationNo("RJ-02-CB-5246"));
     }
+
+    @Test
+    public void getSlotsByInvalidCarRegistrationNo(){
+        assertEquals("Not Exist",parkinglot.getSlotsByCarRegistrationNo("KA-02-CB-5246"));
+    }
 }

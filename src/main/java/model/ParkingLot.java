@@ -85,4 +85,13 @@ public class ParkingLot {
         }
         return slots.substring(0,slots.length()-2);
     }
+
+    public String getSlotsByCarRegistrationNo(String RegNo) {
+        for(int i=1;i<=this.parkinglotmapping.size();i++){
+            if(this.parkinglotmapping.get(i)!=null && this.parkinglotmapping.get(i).getRegistratonNo().equalsIgnoreCase(RegNo)){
+                return Integer.toString(i);
+            }
+        }
+        return "Not Exist";
+    }
 }
