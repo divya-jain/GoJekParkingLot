@@ -1,13 +1,9 @@
-import model.ParkingLot;
 import model.Car;
+import model.ParkingLot;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.security.PublicKey;
-
-import static org.junit.Assert.*;
-
+import static org.junit.Assert.assertEquals;
 
 public class ParkingLotTesting {
     public ParkingLot parkinglot;
@@ -15,10 +11,13 @@ public class ParkingLotTesting {
     @Before
     public void initializeParkingLot(){
         parkinglot = new ParkingLot(4);
+
         Car car1 = new Car("RJ-02-CB-5244","Pink");
         parkinglot.park(car1);
+
         Car car2 = new Car("RJ-02-CB-5245","White");
         parkinglot.park(car2);
+
         Car car3 = new Car("RJ-02-CB-5246","Pink");
         parkinglot.park(car3);
     }
@@ -36,6 +35,7 @@ public class ParkingLotTesting {
     @Test
     public void testParkingInASlot(){
         Car car4 = new Car("RJ-02-CB-5247","White");
+
         assertEquals("Allocated slot number: 4",parkinglot.park(car4));
     }
 
@@ -43,7 +43,9 @@ public class ParkingLotTesting {
     public void testUnavailableParkingSlot(){
         Car car4 = new Car("RJ-02-CB-5247","White");
         parkinglot.park(car4);
+
         Car car5 = new Car("RJ-02-CB-5248","White");
+
         assertEquals("Sorry, Parking Lot is full",parkinglot.park(car5));
     }
     @Test
@@ -70,6 +72,7 @@ public class ParkingLotTesting {
     public void testgetRegistrationNoByColor(){
         Car car4 = new Car("RJ-02-CB-5247","White");
         parkinglot.park(car4);
+
         assertEquals("RJ-02-CB-5245, RJ-02-CB-5247",parkinglot.getRegistrationNoByColor("White"));
     }
 

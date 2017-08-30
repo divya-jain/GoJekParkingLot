@@ -3,11 +3,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+
 import model.Car;
 import model.ParkingLot;
 
 public class ParkingLotApplication {
     public static ParkingLot parkingLot = null;
+
     public static void main(String args[]) {
         int input;
         Scanner scan = new Scanner(System.in);
@@ -19,6 +21,7 @@ public class ParkingLotApplication {
                 File file = new File("input.txt");
                 FileReader fileReader = new FileReader(file);
                 BufferedReader bufferedReader = new BufferedReader(fileReader);
+
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
                     StringBuffer stringBuffer = new StringBuffer();
@@ -27,11 +30,12 @@ public class ParkingLotApplication {
                     String command = stringBuffer.toString();
                     CallerFunction(command);
                 }
+
                 fileReader.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(input==2) {
+        } else if (input == 2) {
             while (true) {
                 System.out.println("Enter command line imput:");
                 String command = scan.nextLine();
@@ -40,7 +44,7 @@ public class ParkingLotApplication {
         }
     }
 
-    public static void CallerFunction(String input){
+    public static void CallerFunction(String input) {
         String[] values = input.split(" ");
         switch (values[0]) {
             case "create_parking_lot":
