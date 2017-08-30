@@ -36,7 +36,7 @@ public class ParkingLotTesting {
     @Test
     public void testParkingInASlot(){
         Car car4 = new Car("RJ-02-CB-5247","White");
-        assertEquals("Car parked to slot number: 4",parkinglot.park(car4));
+        assertEquals("Allocated slot number: 4",parkinglot.park(car4));
     }
 
     @Test
@@ -53,7 +53,7 @@ public class ParkingLotTesting {
 
     @Test
     public void testLeaveParkingSlot(){
-        assertEquals("Slot Number 2 is now free",parkinglot.leave(2));
+        assertEquals("Slot Number 2 is free",parkinglot.leave(2));
     }
 
     @Test
@@ -75,7 +75,7 @@ public class ParkingLotTesting {
 
     @Test
     public void testSlotByCarColor(){
-        assertEquals("1 ,3",parkinglot.getSlotsByCarColor("Pink"));
+        assertEquals("1, 3",parkinglot.getSlotsByCarColor("Pink"));
     }
 
     @Test
@@ -85,6 +85,6 @@ public class ParkingLotTesting {
 
     @Test
     public void getSlotsByInvalidCarRegistrationNo(){
-        assertEquals("Not Exist",parkinglot.getSlotsByCarRegistrationNo("KA-02-CB-5246"));
+        assertEquals("Not found",parkinglot.getSlotsByCarRegistrationNo("KA-02-CB-5246"));
     }
 }

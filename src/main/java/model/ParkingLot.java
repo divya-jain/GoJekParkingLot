@@ -27,7 +27,7 @@ public class ParkingLot {
             return "Sorry, Parking Lot is full";
         else{
             parkinglotmapping.put(emptySlot,car);
-            return "Car parked to slot number: "+emptySlot;
+            return "Allocated slot number: "+emptySlot;
 
         }
     }
@@ -54,7 +54,7 @@ public class ParkingLot {
             return "Sorry,this slot doesn't exist";
         else{
             this.parkinglotmapping.put(position,null);
-            return "Slot Number "+position+" is now free";
+            return "Slot Number "+position+" is free";
         }
     }
 
@@ -81,7 +81,7 @@ public class ParkingLot {
         String slots="";
         for(int i=1;i<=this.parkinglotmapping.size();i++){
             if(this.parkinglotmapping.get(i)!=null && this.parkinglotmapping.get(i).getcolor().equalsIgnoreCase(color))
-                slots+=i+ " ,";
+                slots+=i+ ", ";
         }
         return slots.substring(0,slots.length()-2);
     }
@@ -92,6 +92,6 @@ public class ParkingLot {
                 return Integer.toString(i);
             }
         }
-        return "Not Exist";
+        return "Not found";
     }
 }
