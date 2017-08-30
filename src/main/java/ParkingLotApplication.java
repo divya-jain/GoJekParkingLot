@@ -17,8 +17,10 @@ public class ParkingLotApplication {
         System.out.println("Enter 1 for file input/Enter 2 for command line input");
         input = Integer.parseInt(scan.nextLine());
         if (input == 1) {
+            System.out.println("Enter full path name for the text input file: ");
+            String path=scan.nextLine();
             try {
-                File file = new File("input.txt");
+                File file = new File(path);
                 FileReader fileReader = new FileReader(file);
                 BufferedReader bufferedReader = new BufferedReader(fileReader);
 
